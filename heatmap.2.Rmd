@@ -18,23 +18,33 @@ library(gplots)
 heatmap.2(as.matrix(a))
 ```
 
+Arguments "scale" is the chrater string indicating whether to draw 'none', 'row', 'column' or 'both' dendrograms. Defaults to 'both'. However, if Rowv (or Colv) is FALSE or NULL and dendrogram is 'both', then a warning is issued and Rowv (or Colv) arguments are honoured.
+
 ```{r}
 heatmap.2(as.matrix(a),scale="row")
 
 ```
 
+Argument "col" is colors used for the image. Defaults to heat colors (heat.colors).
+
 ```{r}
 heatmap.2(as.matrix(a),scale="row",col=bluered(256))
 ```
 
+Argument "trace": character string indicating whether a solid "trace" line should be drawn across 'row's or down 'column's, 'both' or 'none'. The distance of the line from the center of each color-cell is proportional to the size of the measurement. Defaults to 'column'.
 
 ```{r}
 heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none")
 ```
 
+Arguments: labRow, labCol  
+character vectors with row and column labels to use; these default to rownames(x) or colnames(x), respectively.
 ```{r}
 heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA)
 ```
+
+key:
+logical indicating whether a color-key should be shown.
 
 ```{r}
 heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA, key=F)
@@ -47,4 +57,3 @@ density.info: character string indicating whether to superimpose a
 ```{r}
 heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA,density.info="none",)
 ```
-

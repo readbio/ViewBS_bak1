@@ -1,0 +1,50 @@
+---
+title: "R heatmap"
+author: "Shaojun Xie"
+date: "Thursday, November 19, 2015"
+output: html_document
+---
+
+This is an example to show you how to draw a heatmap and also show you how each parameter work. 
+
+
+```{r}
+library(gsheet)
+a<-gsheet2tbl('https://docs.google.com/spreadsheets/d/1MUPsoYsxHwoQFEjsq_XlTvxAK6uA0QyuboACvMg2pVo/pubhtml')
+b<-unlist(a[,1])
+rownames(a)<-b
+a$id<-NULL
+library(gplots)
+heatmap.2(as.matrix(a))
+```
+
+```{r}
+heatmap.2(as.matrix(a),scale="row")
+
+```
+
+```{r}
+heatmap.2(as.matrix(a),scale="row",col=bluered(256))
+```
+
+
+```{r}
+heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none")
+```
+
+```{r}
+heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA)
+```
+
+```{r}
+heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA, key=F)
+```
+
+density.info: character string indicating whether to superimpose a
+          'histogram', a 'density' plot, or no plot ('none') on the
+          color-key.
+          
+```{r}
+heatmap.2(as.matrix(a),scale="row",col=bluered(256),trace="none",labRow=NA,density.info="none",)
+```
+

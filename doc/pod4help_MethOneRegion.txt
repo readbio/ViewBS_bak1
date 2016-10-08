@@ -1,0 +1,70 @@
+=pod
+
+=head1 NAME
+
+ViewBS MethOneRegion - Extract methylation information for one region of each sample. 
+
+=head1 SYNOPSIS
+
+ViewBS MethHeatmap
+--region <region chr1:100-200>
+--sample <methlation information,sample_name> [--sample <methlation information,sample_name>]
+--prefix <prefix for output file>
+
+=head1 DESCRIPTION
+
+ViewBS MethOneRegion - Extract methylation information for one region of each
+sample and plot the methylation information. 
+
+=head1 Required arguments
+
+=over 8
+
+=item B<-help> | B<-h>
+
+ - Prints the help message and exists.
+
+=item B<verbose>
+   
+ - Suppress extended information or not. [Default: TRUE]
+
+=item B<region [required]>
+
+ - One target region. [chr1:100-200]
+
+=item B<sample [required]>
+
+ - Provide the sample information. [Format: methlationFile,samplenName] 
+   It is possible to specify more than one sample pair by using the options 
+   --sample more than once. The methylation information can also be read from
+   a TEXT file. Instead of giving an explicit sample information pairs, 
+   you need to write file: followed by the name of the TEXT file.
+
+=item B<minDepth [optional]>
+
+ - Minimum read depth for calculating methylation level. [default: 5]
+
+=item B<maxDepth [optional]>
+
+ - Maximum read depth for calculating methylation level. [default: 400]
+
+=item B<prefix [optional]>
+
+ - Output folder. [Default: ./]
+
+=item B<prefix [optional]>
+
+ - Provide prefix for the output file. [Default: MethOneRegion]
+
+=back
+
+=head1 DISCUSSION FORUM
+
+Recent changes, bug fixes and feature additions will be announced through this
+Google discussion group: ViewBS discussion forum. Users are encouraged to
+ask questions through this forum (instead of shooting me emails) so that the
+answers can be shared. If you are interested, you can sign up to receive
+updates through E-mails.
+=head1 Affiliation
+
+=cut
